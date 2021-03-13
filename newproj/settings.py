@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-GDAL_LIBRARY_PATH = r'C:\\OSGeo4W64\\bin\\gdal301'
+# GDAL_LIBRARY_PATH = r'C:\\OSGeo4W64\\bin\\gdal301'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -24,9 +24,9 @@ GDAL_LIBRARY_PATH = r'C:\\OSGeo4W64\\bin\\gdal301'
 SECRET_KEY = 'q+k@y%e4*)3nkuyc+#ex@)isuc^%jlidsan^8ihipsom&6uwqb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['apphaiye.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
-    'newapp',
+    # 'django.contrib.gis',
+    # 'newapp',
     'rest_framework',
+    'ekorapp',
 ]
 
 MIDDLEWARE = [
@@ -79,11 +80,11 @@ WSGI_APPLICATION = 'newproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'newdb',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8eoj6t99c939n',
+        'USER': 'rihqzymomqzidv',
+        'PASSWORD': 'ee0a6a6bf7318c5c661eb1847aff91439532e35e233f1c2611aa71ccb3c6e3d8',
+        'HOST': 'ec2-18-233-32-61.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
